@@ -7,6 +7,7 @@ import {
   useEnsAvatar,
   useEnsName,
 } from "wagmi";
+import styles from "./style.module.css";
 
 const WagmiProfile = () => {
   const { address, connector, isConnected } = useAccount();
@@ -28,7 +29,7 @@ const WagmiProfile = () => {
   }
 
   return (
-    <div>
+    <div className={styles.wagmiContainer}>
       {connectors.map((connector) => (
         <button
           disabled={!connector.ready}
