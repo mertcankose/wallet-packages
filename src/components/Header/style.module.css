@@ -1,0 +1,15 @@
+.header {
+    @apply
+    flex justify-center gap-10 py-12
+    mx-auto
+ }
+
+ .activeLink {
+    @apply
+    text-blue-500
+ }
+
+ .inactiveLink {
+    @apply
+    text-white
+ }

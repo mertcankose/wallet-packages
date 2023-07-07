@@ -1,0 +1,21 @@
+.container {
+    @apply
+     w-72 flex items-center gap-3 bg-dark hover:bg-hoverDark px-3 py-3 rounded-md
+    font-semibold
+    transition-colors duration-300
+}
+
+.textSection {
+    @apply
+    flex justify-between flex-1
+}
+
+.walletIcon {
+    @apply
+    rounded-lg
+}
+
+.unsupportedText {
+    @apply
+    text-red-500
+}

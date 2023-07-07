@@ -17,30 +17,30 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
   ]
 );
 
-// Set up wagmi config
 const config = createConfig({
   autoConnect: true,
   connectors: [
     new MetaMaskConnector({ chains }),
-    new CoinbaseWalletConnector({
-      chains,
-      options: {
-        appName: "wagmi",
-      },
-    }),
     new WalletConnectConnector({
       chains,
       options: {
         projectId: "f608b705c2677fbd420aa76786028d1b",
       },
     }),
-    new InjectedConnector({
+    new CoinbaseWalletConnector({
       chains,
       options: {
-        name: "Injected",
-        shimDisconnect: true,
+        appName: "wagmi",
       },
     }),
+
+    // new InjectedConnector({
+    //   chains,
+    //   options: {
+    //     name: "Injected",
+    //     shimDisconnect: true,
+    //   },
+    // }),
   ],
   publicClient,
   webSocketPublicClient,

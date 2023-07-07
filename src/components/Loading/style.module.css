@@ -1,0 +1,9 @@
+.loadingSvg {
+    @apply
+    w-6 h-6 text-gray-200 animate-spin fill-blue-600
+}
+
+.loadingSpan {
+    @apply
+    sr-only
+}
