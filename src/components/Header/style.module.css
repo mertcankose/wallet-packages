@@ -1,6 +1,6 @@
 .header {
     @apply
-    flex justify-center gap-10 py-12
+    flex flex-col md:flex-row justify-center items-center gap-10 py-12
     mx-auto
  }
 
