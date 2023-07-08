@@ -6,22 +6,25 @@ import {
   Home,
   Wagmi,
   ConnectKit,
-  Web3Modal,
+  WalletConnect,
   Dynamic,
   RainbowKit,
 } from "./pages/";
+import PageLayout from "./layouts/PageLayout";
 
 const WalletRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
-        <Route path="/wagmi" element={<Wagmi />} />
-        <Route path="/connectkit" element={<ConnectKit />} />
-        <Route path="/web3modal" element={<Web3Modal />} />
-        <Route path="/dynamic" element={<Dynamic />} />
-        <Route path="/rainbowkit" element={<RainbowKit />} />
-        <Route path="*" element={<NotFound />} />
+        <Route element={<PageLayout />}>
+          <Route path="/wagmi" element={<Wagmi />} />
+          <Route path="/connectkit" element={<ConnectKit />} />
+          <Route path="/walletconnect" element={<WalletConnect />} />
+          <Route path="/dynamic" element={<Dynamic />} />
+          <Route path="/rainbowkit" element={<RainbowKit />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Route>
     </Routes>
   );

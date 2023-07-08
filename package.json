@@ -10,11 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@dynamic-labs/sdk-react": "^0.17.21",
+    "@dynamic-labs/wagmi-connector": "^0.17.21",
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "@metamask/detect-provider": "^2.0.0",
+    "@rainbow-me/rainbowkit": "^1.0.5",
     "@web3modal/ethereum": "^2.6.2",
     "@web3modal/react": "^2.6.2",
     "axios": "^1.4.0",
+    "connectkit": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",

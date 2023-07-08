@@ -41,7 +41,7 @@ const WagmiProfile = () => {
   if (isConnected) {
     return (
       <div className={styles.wagmiContainer}>
-        <h2 className={styles.title}>WAGMI</h2>
+        <h2 className={styles.title}>WAGMI (CUSTOM)</h2>
         {/* <img src={ensAvatar} alt="ENS Avatar" /> */}
         <div>{ensName ? `${ensName} (${address})` : address}</div>
         <div>Connected to {connector?.name}</div>
@@ -52,7 +52,7 @@ const WagmiProfile = () => {
 
   return (
     <div className={styles.wagmiContainer}>
-      <h2 className={styles.title}>WAGMI</h2>
+      <h2 className={styles.title}>WAGMI (CUSTOM)</h2>
       {connectors.map((connector) => (
         <button
           disabled={!connector.ready}

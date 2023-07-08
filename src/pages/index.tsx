@@ -1,5 +1,5 @@
 export { default as Home } from "./Home";
-export { default as Web3Modal } from "./Web3Modal";
+export { default as WalletConnect } from "./WalletConnect";
 export { default as Dynamic } from "./Dynamic";
 export { default as Wagmi } from "./Wagmi";
 export { default as RainbowKit } from "./RainbowKit";

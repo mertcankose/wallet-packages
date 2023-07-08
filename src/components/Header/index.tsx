@@ -11,8 +11,8 @@ const headerItems = [
     path: "/connectkit",
   },
   {
-    name: "Web3Modal",
-    path: "/web3modal",
+    name: "WalletConnect",
+    path: "/walletconnect",
   },
   {
     name: "Dynamic",

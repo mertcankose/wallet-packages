@@ -8,6 +8,11 @@ export default defineConfig({
   define: {
     "process.env": {},
   },
+  resolve: {
+    alias: {
+      stream: "stream-browserify",
+    },
+  },
   optimizeDeps: {
     esbuildOptions: {
       define: {

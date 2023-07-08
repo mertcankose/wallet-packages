@@ -1,0 +1,14 @@
+.walletconnectContainer {
+    @apply
+    flex flex-col items-center gap-4 h-screen
+}
+
+.title {
+    @apply
+    font-semibold text-xl
+}
+
+.errorMessage {
+    @apply
+    font-semibold
+}
