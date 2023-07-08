@@ -12,3 +12,8 @@
     @apply
     font-semibold
 }
+
+.address {
+    @apply
+    flex flex-wrap text-xs md:text-base
+}

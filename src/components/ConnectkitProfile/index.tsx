@@ -14,7 +14,9 @@ const ConnectkitProfile = () => {
     return (
       <div className={styles.connectkitContainer}>
         <h2 className={styles.title}>CONNECTKIT</h2>
-        <div>{ensName ? `${ensName} (${address})` : address}</div>
+        <div className={styles.address}>
+          {ensName ? `${ensName} (${address})` : address}
+        </div>
         <button onClick={disconnect}>Disconnect</button>
       </div>
     );

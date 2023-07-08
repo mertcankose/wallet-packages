@@ -1,6 +1,6 @@
 .container {
     @apply
-    w-72 flex items-center gap-3 bg-dark hover:bg-hoverDark px-3 py-3 rounded-md
+    w-72 hidden md:flex items-center gap-3 bg-dark hover:bg-hoverDark px-3 py-3 rounded-md
     font-semibold
     transition-colors duration-300
 }

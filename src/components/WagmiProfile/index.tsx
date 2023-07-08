@@ -43,7 +43,9 @@ const WagmiProfile = () => {
       <div className={styles.wagmiContainer}>
         <h2 className={styles.title}>WAGMI (CUSTOM)</h2>
         {/* <img src={ensAvatar} alt="ENS Avatar" /> */}
-        <div>{ensName ? `${ensName} (${address})` : address}</div>
+        <div className={styles.address}>
+          {ensName ? `${ensName} (${address})` : address}
+        </div>
         <div>Connected to {connector?.name}</div>
         <button onClick={disconnect}>Disconnect</button>
       </div>

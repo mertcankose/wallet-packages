@@ -14,7 +14,9 @@ const RainbowKitProfile = () => {
     return (
       <div className={styles.rainbowkitContainer}>
         <h2 className={styles.title}>RAINBOWKIT</h2>
-        <div>{ensName ? `${ensName} (${address})` : address}</div>
+        <div className={styles.address}>
+          {ensName ? `${ensName} (${address})` : address}
+        </div>
         <button onClick={disconnect}>Disconnect</button>
       </div>
     );

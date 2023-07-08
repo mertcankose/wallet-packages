@@ -14,7 +14,9 @@ const WalletConnectProfile = () => {
     return (
       <div className={styles.walletconnectContainer}>
         <h2 className={styles.title}>WALLET CONNECT</h2>
-        <div>{ensName ? `${ensName} (${address})` : address}</div>
+        <div className={styles.address}>
+          {ensName ? `${ensName} (${address})` : address}
+        </div>
         <button onClick={disconnect}>Disconnect</button>
       </div>
     );
