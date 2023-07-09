@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { WagmiConfig, createConfig } from "wagmi";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
 import { ALCHEMY_ID, WALLETCONNECT_PROJECT_ID } from "../utils";

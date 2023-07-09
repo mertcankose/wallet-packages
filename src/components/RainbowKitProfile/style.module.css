@@ -15,5 +15,5 @@
 
 .address {
     @apply
-    flex flex-wrap text-xs md:text-base
+    flex flex-col items-center flex-wrap text-xs md:text-base
 }

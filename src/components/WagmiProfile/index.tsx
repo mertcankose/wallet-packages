@@ -1,6 +1,6 @@
-// @ts-nocheck
-
+import { MouseEventHandler } from "react";
 import {
+  Connector,
   useAccount,
   useConnect,
   useDisconnect,
@@ -12,8 +12,8 @@ import { Coinbase, MetaMask, WalletConnect } from "..";
 
 const WagmiProfile = () => {
   const { address, connector, isConnected } = useAccount();
-  const { data: ensAvatar } = useEnsAvatar({ address });
   const { data: ensName } = useEnsName({ address });
+  const { data: ensAvatar } = useEnsAvatar({ name: ensName });
   const { connect, connectors, error, isLoading, pendingConnector } =
     useConnect();
   const { disconnect } = useDisconnect();
@@ -25,16 +25,46 @@ const WagmiProfile = () => {
   - walletConnect
   */
 
-  const getWalletComp = (connector) => {
+  const disconnectWallet: MouseEventHandler<HTMLButtonElement> = () => {
+    disconnect();
+  };
+
+  const getWalletComp = (connector: Connector) => {
     switch (connector.id) {
       case "metaMask":
-        return <MetaMask connector={connector} isLoading={isLoading} />;
+        return (
+          <MetaMask
+            connector={connector}
+            isLoading={isLoading}
+            pendingConnector={pendingConnector}
+          />
+        );
       case "coinbaseWallet":
-        return <Coinbase connector={connector} isLoading={isLoading} />;
+        return (
+          <Coinbase
+            connector={connector}
+            isLoading={isLoading}
+            pendingConnector={pendingConnector}
+          />
+        );
       case "walletConnect":
-        return <WalletConnect connector={connector} isLoading={isLoading} />;
+        return (
+          <WalletConnect
+            connector={connector}
+            isLoading={isLoading}
+            pendingConnector={pendingConnector}
+          />
+        );
       default:
         break;
+    }
+  };
+
+  const controlEnsAvatar = (avatar: string | undefined | null) => {
+    if (avatar === null || avatar === undefined) {
+      return false;
+    } else {
+      return true;
     }
   };
 
@@ -42,12 +72,17 @@ const WagmiProfile = () => {
     return (
       <div className={styles.wagmiContainer}>
         <h2 className={styles.title}>WAGMI (CUSTOM)</h2>
-        {/* <img src={ensAvatar} alt="ENS Avatar" /> */}
+        {controlEnsAvatar(ensAvatar) && (
+          <img src={ensAvatar || undefined} alt="ENS Avatar" width={180} />
+        )}
+
         <div className={styles.address}>
-          {ensName ? `${ensName} (${address})` : address}
+          <p>{ensName && ensName}</p>
+          <p>{address}</p>
+          {/* {ensName ? `${ensName} (${address})` : address} */}
         </div>
         <div>Connected to {connector?.name}</div>
-        <button onClick={disconnect}>Disconnect</button>
+        <button onClick={disconnectWallet}>Disconnect</button>
       </div>
     );
   }
